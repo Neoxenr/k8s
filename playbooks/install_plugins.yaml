@@ -1,0 +1,15 @@
+---
+
+- hosts: master
+  become: true
+  gather_facts: false
+
+  tasks:
+    - name: Enable dns
+      command: microk8s enable dns
+    
+    - name: Enable dashboard
+      command: microk8s enable dashboard
+
+    - name: Enable ingress
+      command: microk8s enable ingress
